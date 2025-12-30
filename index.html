@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUQMAN'S PORTFOLIO</title>
+
+    <!-- Bootstrap -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous"> -->
+
+    <!-- logo -->
+    <link rel="shortcut icon" href="images/ML logo.png" type="image/x-icon">
+    <!-- Tailwind -->
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Animations Link -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="Css-Variables.css">
+
+</head>
+
+<body class="bg-black">
+
+    <!-- Header -->
+    <section class="sticky top-0 z-40" id="header">
+        <header class="absolute inset-x-0 top-0 z-50 bg-[#191210]">
+            <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8" id="navbar">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="ml-10 p-1.5">
+                        <h1 class="text-2xl text-[var(--main-text-color)] font-bold">LUQMAN NASIR</h1>
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button type="button" command="show-modal" commandfor="mobile-menu"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Navigation -->
+                <div class="hidden list-none lg:flex lg:text-white lg:font-bold lg:gap-x-5">
+                    <li><a href="#Home" class="nav-link hover:text-[var(--main-text-color)]">Home</a></li>
+                    <li><a href="#About" class="nav-link hover:text-[var(--main-text-color)]">About</a></li>
+                    <li><a href="#Service" class="nav-link hover:text-[var(--main-text-color)]">Services</a></li>
+                    <li><a href="#Blog" class="nav-link hover:text-[var(--main-text-color)]">Blog</a></li>
+                    <li><a href="#Project" class="nav-link hover:text-[var(--main-text-color)]">Projects</a></li>
+                    <li><a href="#Contact" class="nav-link hover:text-[var(--main-text-color)]">Contact</a></li>
+                </div>
+                <!-- Contact Icons -->
+                <div class="hidden text-white lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
+                    <div
+                        class="relative w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-1 ">
+                        <a href="https://www.instagram.com/mluqman._22/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div
+                        class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                        <a href="https://www.linkedin.com/in/muhammad-luqman-nasir-web-developer/"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <div
+                        class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                        <a href="https://wa.me/923297342850"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div
+                        class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                        <a href="https://www.facebook.com/profile.php?id=61550311270669"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </nav>
+            <el-dialog>
+
+                <!-- Mobile Menu -->
+                <dialog id="mobile-menu" class="backdrop:bg-transparent lg:hidden">
+                    <div tabindex="0" class="fixed inset-0 focus:outline-none">
+                        <el-dialog-panel
+                            class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-black p-6 sm:max-w-sm sm:ring-1 sm:ring-gray-100/10">
+                            <div class="flex items-center justify-between">
+                                <a href="#" class="-m-1.5 p-1.5">
+                                    <h1 class="text-2xl text-[#FF014F] font-bold">LUQMAN NASIR</h1>
+                                </a>
+                                <button type="button" command="close" commandfor="mobile-menu"
+                                    class="-m-2.5 rounded-md p-2.5 text-gray-200">
+                                    <span class="sr-only">Close menu</span>
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+                                        data-slot="icon" aria-hidden="true" class="size-6">
+                                        <path d="M6 18 18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="mt-6 flow-root">
+                                <div class="-my-6 divide-y divide-white/10">
+                                    <div class="space-y-2 py-6">
+                                        <a href="#Home"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[var(--main-text-color)]">Home</a>
+                                        <a href="#About"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[var(--main-text-color)]">About</a>
+                                        <a href="#Service"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[var(--main-text-color)]">Services</a>
+                                        <a href="#Blog"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[var(--main-text-color)]">Blog</a>
+                                        <a href="#Project"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[var(--main-text-color)]">Project</a>
+                                        <a href="#Contact"
+                                            class="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-white hover:bg-[var(--main-text-color)]">Contact</a>
+                                    </div>
+                                    <h1 class="text-white font-bold text-xl">Find Me With</h1>
+                                    <div class="py-6 flex gap-x-3 text-white">
+                                        <div
+                                            class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                                            <a href="https://www.instagram.com/mluqman._22/"><i
+                                                    class="fa-brands fa-instagram"></i></a>
+                                        </div>
+                                        <div
+                                            class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                                            <a href="https://www.linkedin.com/in/muhammad-luqman-nasir-web-developer/"><i
+                                                    class="fa-brands fa-linkedin-in"></i></a>
+                                        </div>
+                                        <div
+                                            class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                                            <a href="https://wa.me/923297342850"><i
+                                                    class="fa-brands fa-whatsapp"></i></a>
+                                        </div>
+                                        <div
+                                            class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                                            <a href="https://www.facebook.com/profile.php?id=61550311270669"><i
+                                                    class="fa-brands fa-facebook-f"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </el-dialog-panel>
+                    </div>
+                </dialog>
+            </el-dialog>
+        </header>
+    </section>
+
+    <!-- Hero Section -->
+    <section id="Home">
+        <div
+            class="bg-[url('https://inversweb.com/product/html/reeni/assets/images/banner/banner-background-one.jpg')] bg-cover bg-center py-18">
+            <div class="w-full text-white grid grid-cols-1 gap-10 justify-between items-end lg:grid-cols-2">
+                <div class="flex flex-col gap-5 order-2 pb-10 px-10 sm:px-20 md:pl-18 lg:px-20 lg:order-1">
+
+                    <!-- Name -->
+                    <div data-aos="fade-right" class="flex flex-col gap-4">
+                        <span class="text-[28px] font-bold text-shadow-lg/30 text-shadow-[#FF014F]">Hello</span>
+                        <h1
+                            class="text-3xl font-semibold md:text-[45px] p-0 m-0 text-shadow-lg/30 text-shadow-[#FF014F]">
+                            i'm <span class="font-extrabold p-0 m-0 text-shadow-lg/30 text-shadow-[#FF014F]">LUQMAN
+                                NASIR</span>
+                        </h1>
+                        <span
+                            class="text-2xl font-extrabold text-[#FF014F] md:text-4xl p-0 m-0 text-shadow-lg/30 text-shadow-black"
+                            id="heroText">FRONT-END
+                            DEVELOPER!</span>
+                        <p class=" text-[#9F9F9F] text-shadow-lg/30"> <b>Welcome</b> to my portfolio a
+                            space
+                            where I turn ideas
+                            into <b>responsive</b> ,
+                            <b>modern</b>, and <b>engaging web interfaces</b> . As a <b>Front-End Developer</b> , I
+                            combine
+                            creativity
+                            with
+                            clean
+                            code to build websites that are fast, user-friendly, and visually appealing
+                        </p>
+                    </div>
+                    <!-- Name end -->
+
+                    <!-- CV button -->
+                    <div class="flex gap-5">
+                        <a href="My Resume.pdf" data-aos="fade-up">
+                            <div
+                                class="group text-[18px] font-bold w-[140px] h-[60px] rounded-full bg-[var(--main-text-color)] relative flex justify-center items-center overflow-hidden cursor-pointer transition-all duration-[.5s] hover:-translate-y-1">
+                                <span><i
+                                        class="fa-solid fa-arrow-right text-white -translate-x-8 transition-all duration-[.4s] group-hover:translate-x-2"></i></span>
+                                <p class="-translate-x-2 transition-all duration-[.8s] group-hover:translate-x-2"
+                                    data-aos="fade-right">VEIW CV</p>
+                                <span><i
+                                        class="fa-solid fa-arrow-right -translate-x-2 transition-all duration-[.4s] group-hover:translate-x-8"></i></span>
+                            </div>
+                        </a>
+                        <!-- get-in-touch -->
+                        <a href="#Contact" data-aos="fade-up">
+                            <div
+                                class="group text-[18px] font-bold w-[180px] h-[60px] rounded-full bg-[var(--main-text-color)] relative flex justify-center items-center overflow-hidden cursor-pointer transition-all duration-[.5s] hover:-translate-y-1">
+                                <span><i
+                                        class="fa-solid fa-arrow-right text-white -translate-x-14 transition-all duration-[.4s] group-hover:translate-x-2"></i></span>
+                                <p class="-translate-x-2 transition-all duration-[.8s] group-hover:translate-x-2"
+                                    data-aos="fade-right">GET IN TOUCH</p>
+                                <span><i
+                                        class="fa-solid fa-arrow-right -translate-x-2 transition-all duration-[.4s] group-hover:translate-x-12"></i></span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Image -->
+                <div class="relative flex items-center justify-center order-1 lg:order-2">
+                    <img src="images/upwork profile.png" alt="" class="w-auto h-100 md:h-130" data-aos="zoom-in">
+                    <h1
+                        class="absolute top-80 left-27 font-bold text-4xl animate-bounce sm:left-38 md:top-113 md:left-45  md:text-5xl lg:left-35">
+                        WEB
+                        DEVELOPER</h1>
+                </div>
+                <!-- Right Image end-->
+
+                <!-- Back to top -->
+                <button id="backToTop" class="hidden fixed bottom-8 right-8 bg-[#FF014F] text-white p-6 rounded-full shadow-lg 
+                      hover:bg-[#e30046] transition-all duration-300 cursor-pointer 
+                      backdrop-blur-md z-50">
+                    <i class="fa-solid fa-arrow-up"></i>
+                </button>
+                <!-- Back to top -->
+
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="About">
+        <div class="my-20">
+
+            <!--About cards -->
+            <div class="grid grid-cols-1 p-8 gap-8 sm:grid-cols-2 md:p-18 lg:grid-cols-4 lg:p-20 lg:gap-5">
+                <!-- Card1 -->
+                <div class="flex flex-col items-center justify-around gap-y-5 py-8 border border-[#891919] rounded-3xl lg:py-12"
+                    data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="200">
+                    <i class="fa-solid fa-pen-ruler text-[#FF014F] text-5xl"></i>
+                    <a href="https://github.com/56star3035-collab">
+                        <h1
+                            class="text-white font-bold text-2xl after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s] text-shadow-lg/30 text-shadow-[#FF014F]">
+                            Web Design</h1>
+                    </a>
+                    <p class="text-[#9F9F9F]">03 Projects</p>
+                </div>
+                <!-- Card2 -->
+                <div class="flex flex-col items-center justify-around gap-y-5 py-8 border border-[#891919] rounded-3xl"
+                    data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="400">
+                    <i class="fa-solid fa-bezier-curve text-[#FF014F] text-5xl"></i>
+                    <a href="https://github.com/56star3035-collab">
+                        <h1
+                            class="text-white font-bold text-2xl after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s] text-shadow-lg/30 text-shadow-[#FF014F]">
+                            UI/UX Design</h1>
+                    </a>
+                    <p class="text-[#9F9F9F]">03 Projects</p>
+                </div>
+                <!-- Card3 -->
+                <div class="flex flex-col items-center justify-around gap-y-5 py-8 border border-[#891919] rounded-3xl"
+                    data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="600">
+                    <i class="fa-solid fa-code text-[#FF014F] text-5xl"></i>
+                    <a href="https://github.com/56star3035-collab">
+                        <h1
+                            class="text-white font-bold text-2xl after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s] text-shadow-lg/30 text-shadow-[#FF014F]">
+                            Web Development</h1>
+                    </a>
+                    <p class="text-[#9F9F9F]">03 Projects</p>
+                </div>
+                <!-- Card4 -->
+                <div class="flex flex-col items-center justify-around gap-y-5 py-8 border border-[#891919] rounded-3xl"
+                    data-aos="fade-up" data-aos-anchor-placement="top-bottom" data-aos-duration="800">
+                    <i class="fa-regular fa-lightbulb text-[#FF014F] text-5xl"></i>
+                    <a href="https://github.com/56star3035-collab">
+                        <h1
+                            class="text-white font-bold text-2xl after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s] text-shadow-lg/30 text-shadow-[#FF014F]">
+                            Web Research</h1>
+                    </a>
+                    <p class="text-[#9F9F9F]">0 Projects</p>
+                </div>
+            </div>
+
+            <!--About Expericence Cards -->
+            <div class="text-white p-8 grid gap-10 md:px-18 lg:grid-cols-2">
+                <div class="flex flex-col gap-6 bg-linear-[-35deg,#FF014F_5%,black_50%] rounded-3xl p-6 lg:px-12 lg:py-15 lg:row-span-2"
+                    data-aos="fade-up" data-aos-duration="600">
+                    <div class="flex flex-col gap-6 md:flex-row md:items-center md:gap-10">
+                        <h1 class="counter text-[#FF014F] text-7xl font-bold flex text-shadow-lg/30 lg:flex-col md:text-[120px] lg:text-[165px]"
+                            data-target="7">
+                            <div>
+                                <span>
+                                    <h1>0</h1>
+                                </span>
+                            </div>
+                            <div>
+                                <span>
+                                    <h1>7</h1>
+                                </span>
+                            </div>
+                        </h1>
+                        <h3 class="font-bold text-2xl md:text-5xl text-shadow-lg/30 text-shadow-[#FF014F]">Months of
+                            Expericence</h3>
+                    </div>
+                    <div class="font-semibold text-shadow-lg/30">
+                        <p>By building optimized, modern web interfaces, I help companies enhance their visibility,
+                            improve user interaction, and achieve stronger digital growth.</p>
+                    </div>
+                </div>
+
+                <!-- Projects cards -->
+                <div class="grid gap-10 md:grid-cols-2">
+                    <!-- Card1 -->
+                    <div class="card flex flex-col items-center justify-center gap-4 rounded-3xl bg-[#141414] p-8  lg:px-2 lg:py-8"
+                        data-aos="zoom-in">
+                        <div class="glow"></div>
+                        <h1 class="counter text-5xl font-bold" data-target="3">03+</h1>
+                        <p class="text-xl font-semibold text-[#9F9F9F]">Our Project Complete</p>
+                    </div>
+                    <!-- Card2 -->
+                    <div class="card flex flex-col items-center justify-center gap-4 rounded-3xl bg-[#141414] p-8  lg:px-2 lg:py-8"
+                        data-aos="zoom-in">
+                        <div class="glow"></div>
+                        <h1 class="counter text-5xl font-bold" data-target="0">00</h1>
+                        <p class="text-xl font-semibold text-[#9F9F9F]">Our Project Complete</p>
+                    </div>
+                    <!-- Card3 -->
+                    <div class="card flex flex-col items-center justify-center gap-4 rounded-3xl bg-[#141414] p-8  lg:px-2 lg:py-8"
+                        data-aos="zoom-in">
+                        <div class="glow"></div>
+                        <h1 class="counter text-5xl font-bold" data-target="0">00</h1>
+                        <p class="text-xl font-semibold text-[#9F9F9F]">Clients Reviews</p>
+                    </div>
+                    <!-- Card4 -->
+                    <div class="card flex flex-col items-center justify-center gap-4 rounded-3xl bg-[#141414] p-8  lg:px-2 lg:py-8"
+                        data-aos="zoom-in">
+                        <div class="glow"></div>
+                        <h1 class="counter text-5xl font-bold" data-target="0">00</h1>
+                        <p class="text-xl font-semibold text-[#9F9F9F]">our Satisfied Clients</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- About Skill Card -->
+            <div class="text-white">
+                <!-- Heading -->
+                <div class="flex justify-center items-end">
+                    <h1 class="text-3xl font-bold text-shadow-lg/30 text-shadow-[#FF014F]">Development Skills</h1>
+                    <span>
+                        <img src="https://inversweb.com/product/html/reeni/assets/images/custom-line/custom-line.png"
+                            alt="">
+                    </span>
+                </div>
+                <div
+                    class="grid grid-cols-1 justify-between items-center gap-5 p-8 md:grid-cols-2 md:p-18 lg:p-20 lg:grid-cols-4">
+                    <!-- Skill 1 -->
+                    <div class="bg-[#141414] flex items-center justify-center p-8 rounded-3xl border border-[#FF014F] transition-all duration-[.5s] hover:shadow-2xl shadow-[#FF014F] cursor-pointer"
+                        data-aos-duration="800" data-aos="fade-up">
+                        <img src="images/html-1.svg" class="w-[80px] h-auto" alt="">
+                    </div>
+                    <!-- Skill 2 -->
+                    <div class="bg-[#141414] flex items-center justify-center p-8 rounded-3xl border border-[#FF014F] transition-all duration-[.5s] hover:shadow-2xl shadow-[#FF014F] cursor-pointer"
+                        data-aos-duration="600" data-aos="fade-up">
+                        <img src="images/css-3.svg" class="w-[80px] h-auto" alt="">
+                    </div>
+                    <!-- Skill 3 -->
+                    <div class="bg-[#141414] flex items-center justify-center p-8 rounded-3xl border border-[#FF014F] transition-all duration-[.5s] hover:shadow-2xl shadow-[#FF014F] cursor-pointer"
+                        data-aos-duration="400" data-aos="fade-up">
+                        <img src="images/javascript-r.svg" class="w-[80px] h-auto" alt="">
+                    </div>
+                    <!-- Skill 4 -->
+                    <div class="bg-[#141414] flex items-center justify-center p-8 rounded-3xl border border-[#FF014F] transition-all duration-[.5s] hover:shadow-2xl shadow-[#FF014F] cursor-pointer"
+                        data-aos-duration="200" data-aos="fade-up">
+                        <img src="images/Tailwind_CSS_Logo.svg.png" class="w-[150px] h-auto" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="Service">
+        <div class="my-20 text-white">
+            <div class="text-center flex flex-col justify-center items-center gap-4">
+                <h5 class="text-xl font-bold text-[#FF014F]">Latest Services</h5>
+                <h1 class="text-2xl font-bold md:text-6xl md:px-10 lg:px-70 text-shadow-lg/30 text-shadow-[#FF014F]">
+                    Inspiring
+                    The World One Project</h1>
+                <p class="text-[#9F9F9F]">The projects which are done by me recently.</p>
+            </div>
+            <!-- services cards -->
+            <div class="grid grid-cols-1  gap-10 p-8 sm:px-18 lg:px-20 lg:grid-cols-2">
+                <div class="flex flex-col gap-5">
+                    <div class="card flex flex-col gap-5 bg-[#141414] p-8 rounded-3xl" data-aos-duration="200"
+                        data-aos="fade-up">
+                        <div class="glow"></div>
+                        <h1 class="text-xl font-bold"><span class="mr-[15px]">1.</span>
+                            A Portfolio of Creativity
+                        </h1>
+                        <p class="text-[#9F9F9F]">A Portfolio of Creativity is where imagination meets code. Every
+                            project here is a small story—crafted with design, built with logic, and shaped with the
+                            drive to create something visually engaging and meaningful</p>
+                    </div>
+
+                    <div class="card flex flex-col gap-5 bg-[#141414] p-8 rounded-3xl" data-aos-duration="400"
+                        data-aos="fade-up">
+                        <div class="glow"></div>
+                        <h1 class="text-xl font-bold"><span class="mr-[15px]">1.</span>
+                            My Portfolio of Innovation
+                        </h1>
+                        <p class="text-[#9F9F9F]">My Portfolio of Innovation is where concepts turn into living,
+                            interactive digital experiences. Every project captures a spark of creativity—designed,
+                            coded, and refined to deliver something fresh, functional, and visually engaging</p>
+                    </div>
+
+                    <div class="card flex flex-col gap-5 bg-[#141414] p-8 rounded-3xl" data-aos-duration="600"
+                        data-aos="fade-up">
+                        <div class="glow"></div>
+                        <h1 class="text-xl font-bold"><span class="mr-[15px]">1.</span>
+                            A Showcase of My Projects
+                        </h1>
+                        <p class="text-[#9F9F9F]">This project showcase highlights my practical experience in front-end
+                            development, featuring responsive designs, optimized performance, and user-centric
+                            interfaces. Each project demonstrates my ability to deliver reliable, modern, and
+                            business-ready digital solutions</p>
+                    </div>
+                </div>
+                <div class="flex items-center justify-center overflow-hidden order-1 lg:order-2" data-aos="zoom-in-up"
+                    data-aos-duration="3000">
+                    <img src="images/Services-image.png" alt="" class="rounded-3xl w-auto h-115">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog -->
+    <section id="Blog">
+        <div class="text-white">
+            <div class="text-center flex flex-col justify-center items-center gap-4">
+                <h5 class="text-xl font-bold text-[#FF014F]">Education & Experience</h5>
+                <h1 class="text-2xl font-bold md:text-6xl md:px-10 lg:px-70 text-shadow-lg/30 text-shadow-[#FF014F]">
+                    Empowering
+                    Creativity through</h1>
+                <p class="text-[#9F9F9F]">The projects which are done by me recently.</p>
+            </div>
+
+            <!-- Education cards -->
+            <div class="flex items-end px-8 sm:px-10 lg:px-20">
+                <h1 class="text-4xl font-bold text-shadow-lg/30 text-shadow-[#FF014F]">Education</h1><span>
+                    <img src="https://inversweb.com/product/html/reeni/assets/images/custom-line/custom-line.png"
+                        alt="">
+                </span>
+            </div>
+            <div class="grid grid-cols-1 p-8 gap-10 sm:px-18 lg:grid-cols-2 lg:px-20">
+                <div class="card bg-[#141414] rounded-3xl flex flex-col p-8" data-aos="fade-up">
+                    <div class="glow"></div>
+                    <h4 class="font-semibold">FSc Pre-Medical</h4>
+                    <h2 class="font-bold">2021-2023</h2>
+                    <p class="text-[#9F9F9F] mt-3">FSc Pre-Medical graduate from Muslim College of Science and
+                        Commerce, where I developed a deep interest in analytical and problem-solving skills
+                    </p>
+                </div>
+                <div class="card bg-[#141414] rounded-3xl flex flex-col p-8" data-aos="fade-up">
+                    <div class="glow"></div>
+                    <h4 class="font-semibold">Web Development</h4>
+                    <h2 class="font-bold">2025</h2>
+                    <p class="text-[#9F9F9F]">Web development learner guided by Mark Dev — exploring the art of
+                        front-end design and coding with HTML, CSS, Tailwind, and JavaScript.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Experience -->
+            <div class="flex items-end px-8 sm:px-10 lg:px-20">
+                <h1 class="text-4xl font-bold text-shadow-lg/30 text-shadow-[#FF014F]">Expericence</h1><span>
+                    <img src="https://inversweb.com/product/html/reeni/assets/images/custom-line/custom-line.png"
+                        alt="">
+                </span>
+            </div>
+            <div class="grid grid-cols-1 justify-center items-center gap-10 p-8 sm:px-18 lg:grid-cols-2 lg:px-20">
+                <div data-aos="fade-right" data-aos-duration="400">
+                    <p class="text-[#FF014F] font-semibold">experience</p>
+                    <h2 class="font-bold text-xl">Mark Dev(5-months)</h2>
+                    <h3 class="font-semibold mt-[6px]">UI/UX Designer</h3>
+                    <p class="text-[#9F9F9F] mt-[16px]">At Mark Dev, I explored the art of blending creativity with
+                        usability. Over 5 months, I shaped intuitive user journeys, polished interface elements, and
+                        brought ideas to life through thoughtful, modern design.</p>
+                </div>
+                <div data-aos="zoom-in" data-aos-duration="400">
+                    <img src="images/Portfolio-pic.jpeg" class="w-120 h-auto rounded-3xl" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- latest project -->
+    <section id="Project">
+        <div class="text-white p-8 sm:px-18 lg:px-20">
+            <div class="text-center flex flex-col justify-center items-center gap-4 py-10">
+                <h5 class="text-xl font-bold text-[#FF014F]" data-aos="fade-up">Latest Projects</h5>
+                <h1 class="text-2xl font-bold md:text-6xl md:px-10  lg:px-50 text-shadow-lg/30 text-shadow-[#FF014F]"
+                    data-aos="fade-right">
+                    Transforming
+                    Ideas into Exceptional</h1>
+                <p class="text-[#9F9F9F] px-10 md:px-18 lg:px-50">My latest project reflects my commitment to building
+                    clean, responsive, and
+                    user-focused web experiences. By combining modern UI design with optimized front-end development, I
+                    created a solution that performs smoothly, follows current industry standards, and delivers a
+                    seamless user journey across all devices.</p>
+            </div>
+
+            <!-- projects links -->
+            <div class="grid grid-cols-1 gap-10 p-10 rounded-3xl bg-black border border-[#262626] md:grid-cols-2">
+                <!-- card 1 -->
+                <div class="flex flex-col gap-5 justify-center md:col-span-2">
+                    <a href="https://github.com/56star3035-collab" data-aos="zoom-in">
+                        <div
+                            class="group rounded-3xl border border-[#262626] transition-all duration-[.5s] hover:shadow-2xl shadow-[#FF014F]">
+                            <img src="images/Self-portfolio.png" alt=""
+                                class="w-full h-full transition-all duration-[.5s] rounded-3xl group-hover:scale-104">
+                        </div>
+                    </a>
+                    <a href="https://github.com/56star3035-collab">
+                        <h1 class="text-3xl font-bold transition-all duration-[.3s] hover:text-[#FF014F] cursor-pointer"
+                            data-aos="fade-up">
+                            SELF PORTFOLIO TEMPLATE</h1>
+                    </a>
+                    <div class="flex gap-5" data-aos="fade-up">
+                        <div
+                            class="w-[100px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            HTML</div>
+                        <div
+                            class="w-[100px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            CSS</div>
+                    </div>
+                    <a href="https://github.com/56star3035-collab" class=" w-[140px] h-[40px]" data-aos="fade-up">
+                        <div
+                            class="group w-[140px] h-[40px] rounded-full bg-[#FF014F] relative flex justify-center items-center cursor-pointer transition-all duration-[.3s] hover:-translate-y-1">
+                            <span><i
+                                    class="fa-solid fa-arrow-right text-transparent  transition-all duration-[.5s] group-hover:translate-x-4 group-hover:text-white text-[14px]"></i></span>
+
+                            <span class="transition-all duration-[.5s] group-hover:translate-x-4">
+                                view Details</span>
+                            <span><i
+                                    class="fa-solid fa-arrow-right group-hover:translate-x-4 transition-all duration-[.5s] group-hover:text-transparent text-[14px]"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- card 2 -->
+                <div class="flex flex-col gap-5 justify-center">
+                    <a href="https://github.com/56star3035-collab" data-aos="zoom-in">
+                        <div
+                            class="group rounded-3xl border border-[#262626] transition-all duration-[.5s] hover:shadow-2xl shadow-[#FF014F]">
+                            <img src="images/High Tech.png" alt=""
+                                class="w-full h-auto transition-all duration-[.5s] rounded-3xl group-hover:scale-104">
+                        </div>
+                    </a>
+                    <h1 class="text-3xl font-bold transition-all duration-[.3s] hover:text-[#FF014F] cursor-pointer"
+                        data-aos="fade-up">
+                        HIGH TECH IT SOLUTION</h1>
+                    <div class="flex gap-5" data-aos="fade-up">
+                        <div
+                            class="w-[100px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            HTML</div>
+                        <div
+                            class="w-[100px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            CSS</div>
+                        <div
+                            class="w-[140px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            Tailwind CSS</div>
+                    </div>
+                    <a href="https://github.com/56star3035-collab" class=" w-[140px] h-[40px]" data-aos="fade-up">
+                        <div
+                            class="group w-[140px] h-[40px] rounded-full bg-[#FF014F] relative flex justify-center items-center cursor-pointer transition-all duration-[.3s] hover:-translate-y-1">
+                            <span><i
+                                    class="fa-solid fa-arrow-right text-transparent  transition-all duration-[.5s] group-hover:translate-x-4 group-hover:text-white text-[14px]"></i></span>
+
+                            <span class="transition-all duration-[.5s] group-hover:translate-x-4">
+                                view Details</span>
+                            <span><i
+                                    class="fa-solid fa-arrow-right group-hover:translate-x-4 transition-all duration-[.5s] group-hover:text-transparent text-[14px]"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+                <!-- card 3 -->
+                <div class="flex flex-col gap-5 justify-center">
+                    <a href="https://github.com/56star3035-collab" data-aos="zoom-in">
+                        <div
+                            class="group rounded-3xl border border-[#262626] transition-all duration-[.5s] hover:shadow-2xl shadow-[#FF014F]">
+                            <img src="images/my-portfolio.png" alt=""
+                                class="w-full h-155 transition-all duration-[.5s] rounded-3xl group-hover:scale-104">
+                        </div>
+                    </a>
+                    <h1 class="text-3xl font-bold transition-all duration-[.3s] hover:text-[#FF014F] cursor-pointer"
+                        data-aos="fade-up">
+                        MY PORTFOLIO</h1>
+                    <div class="flex gap-5 flex-wrap md:flex-no-wrap" data-aos="fade-up">
+                        <div
+                            class="w-[90px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            HTML</div>
+                        <div
+                            class="w-[90px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            CSS</div>
+                        <div
+                            class="w-[130px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            Tailwind CSS</div>
+                        <div
+                            class="w-[120px] h-[40px] border border-[#FF014F] flex justify-center items-center rounded-full font-bold cursor-pointer text-[#FF014F] transition-all duration-[.5s] hover:bg-[#FF014F] hover:text-white">
+                            JavaScript</div>
+
+                    </div>
+                    <a href="https://github.com/56star3035-collab" class=" w-[140px] h-[40px]" data-aos="fade-up">
+                        <div
+                            class="group w-[140px] h-[40px] rounded-full bg-[#FF014F] relative flex justify-center items-center cursor-pointer transition-all duration-[.3s] hover:-translate-y-1">
+                            <span><i
+                                    class="fa-solid fa-arrow-right text-transparent  transition-all duration-[.5s] group-hover:translate-x-4 group-hover:text-white text-[14px]"></i></span>
+
+                            <span class="transition-all duration-[.5s] group-hover:translate-x-4">
+                                view Details</span>
+                            <span><i
+                                    class="fa-solid fa-arrow-right group-hover:translate-x-4 transition-all duration-[.5s] group-hover:text-transparent text-[14px]"></i>
+                            </span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- My Skill -->
+    <section>
+        <div class="text-white">
+            <div class="p-6 sm:px-18 lg:px-20 lg:w-[900px]">
+                <h5 class="font-semibold text-[#FF014F] lg:text-xl" data-aos="fade-up">MY SKILL</h5>
+                <h1 class="text-2xl font-bold md:text-4xl lg:text-5xl text-shadow-lg/30 text-shadow-[#FF014F]"
+                    data-aos="fade-right">Elevated
+                    Designs Personalized best Experiences
+                </h1>
+            </div>
+            <!-- Skill Cards -->
+            <div class="sm:m-18 lg:mx-20 md:text-start" id="services">
+                <!-- card1 -->
+                <div class="service-card group flex flex-col items-center justify-center text-center p-8 border-t border-[#9F9F9F] transition-all duration-[.5s] md:grid md:grid-cols-5 md:text-start"
+                    data-aos="fade-up">
+                    <div
+                        class="w-[70px] h-[70px] rounded-full border border-[#9F9F9F] flex justify-center items-center text-[#9F9F9F]">
+                        <i class=" fa-solid fa-building-columns text-4xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-white">Ui/Visual Design</h1>
+                        <p>03 Done</p>
+                    </div>
+                    <div class="text-[#9F9F9F] md:col-span-2">
+                        <p>My work is driven by the belief that thoughtful design and strategic planning can empower
+                            brands and create meaningful digital experiences. I focus on UI...</p>
+                    </div>
+                    <button class="font-bold cursor-pointer"><a href="Design-card.html">READ MORE ></a></button>
+                </div>
+                <!-- card2 -->
+                <div class="service-card group flex flex-col items-center justify-center text-center p-8 border-t border-[#9F9F9F] transition-all duration-[.5s] md:grid md:grid-cols-5 md:text-start"
+                    data-aos="fade-up">
+                    <div
+                        class="w-[70px] h-[70px] rounded-full border border-[#9F9F9F] flex justify-center items-center text-[#9F9F9F]">
+                        <i class="fa-regular fa-calendar text-4xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-white">Ui/Visual Design</h1>
+                        <p>03 Done</p>
+                    </div>
+                    <div class="text-[#9F9F9F] md:col-span-2">
+                        <p>In this portfolio, you’ll find a curated collection of projects that reflect my journey as a
+                            Front-End Developer. Each build highlights my ability to create clean UI, respons...
+                        </p>
+                    </div>
+                    <button class="font-bold cursor-pointer"><a href="Design-card2.html">READ MORE ></a></button>
+                </div>
+                <!-- card3 -->
+                <div class="service-card group flex flex-col items-center justify-center text-center p-8 border-t border-[#9F9F9F] transition-all duration-[.5s] md:grid md:grid-cols-5 md:text-start"
+                    data-aos="fade-up">
+                    <div
+                        class="w-[70px] h-[70px] rounded-full border border-[#9F9F9F] flex justify-center items-center text-[#9F9F9F]">
+                        <i class="fa-solid fa-pen-nib text-4xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold text-white">Motion Design</h1>
+                        <p>21 Done</p>
+                    </div>
+                    <div class="text-[#9F9F9F] md:col-span-2">
+                        <p>Each project here showcases my commitment to excellence and adaptability, built with clean
+                            front-end development practices and modern UI/UX principles....</p>
+                    </div>
+                    <button class="font-bold cursor-pointer"><a href="Design-card3.html">READ MORE ></a></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="Contact">
+        <footer>
+            <div class="text-white grid grid-cols-1 gap-10 p-8 sm:px-18 md:grid-cols-2 lg:grid-cols-3 lg:px-20">
+                <div class="flex flex-col gap-5" data-aos="zoom-in-up">
+                    <div class="">
+                        <a href="#" class="">
+                            <h1 class="text-2xl text-[var(--main-text-color)] font-bold">LUQMAN NASIR</h1>
+                        </a>
+                    </div>
+                    <div>
+                        <h1 class="text-5xl text-shadow-lg/30 text-shadow-[#FF014F]"><span class="font-bold">Get
+                                Ready</span>To Create Great</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-10" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <h3 class="font-bold text-xl">Quick Links</h3>
+                    <ul class="flex flex-col gap-3 text-xl">
+                        <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="cursor-pointer">
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Home</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">About</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Services</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Blog</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Projects</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-10" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <h3 class="font-bold text-xl">Contact</h3>
+                    <ul class="flex flex-col gap-3 text-xl">
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href=""><i class="fa-regular fa-message"></i></a>
+                            </div>
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">56star3035@gmail.com
+                            </a>
+                        </li>
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href=""><i class="fa-solid fa-location-dot"></i></a>
+                            </div>
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Teh:Yazman
+                                Disc:Bahawalpur</a>
+                        </li>
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href="https://wa.me/923297342850"><i class="fa-solid fa-phone"></i></a>
+                            </div>
+                            <a href="https://wa.me/923297342850"
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">+92329-7342850</a>
+                        </li>
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href="https://wa.me/923297342850"><i class="fa-solid fa-phone"></i></a>
+                            </div>
+                            <a href="https://wa.me/923194857135"
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">+92319-4857135</a>
+                        </li>
+                        <li>
+                            <div class="text-white flex items-center gap-x-3" data-aos="fade-up">
+                                <div
+                                    class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[40] after:-z-10">
+                                    <a href="https://www.instagram.com/mluqman._22/"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </div>
+                                <div class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[40] after:-z-10"
+                                    data-aos="zoom-out">
+                                    <a href="https://www.linkedin.com/in/muhammad-luqman-nasir-web-developer/"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                                <div class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[40] after:-z-10"
+                                    data-aos="zoom-out">
+                                    <a href="https://wa.me/923297342850"><i class="fa-brands fa-whatsapp"></i></a>
+                                </div>
+                                <div class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[40] after:-z-10"
+                                    data-aos="zoom-out">
+                                    <a href="https://www.facebook.com/profile.php?id=61550311270669"><i
+                                            class="fa-brands fa-facebook-f"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-white flex flex-col justify-center items-center gap-5 m-8 p-8 border-t border-[#262626] sm:mx-18 md:flex-row md:justify-between lg:mx-20"
+                data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="text-[#9F9F9F]">
+                    <p>&copy; <span class="text-white font-semibold">Luqman Nasir</span> 2025 | All Right Reserved</p>
+                </div>
+                <div>
+                    <ul class="flex gap-3">
+                        <li>
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Terms
+                                & Conditions</a>
+                        </li>
+                        <li class="cursor-pointer"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Privacy
+                                Policy</a>
+                        </li>
+                        <li class="cursor-pointer"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
+    <!-- Bootstrap -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script> -->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script> -->
+
+    <!-- Aos link -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
+</body>
+
+</html>

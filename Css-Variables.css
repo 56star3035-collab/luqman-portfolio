@@ -1,0 +1,74 @@
+:root {
+    --main-text-color: #FF014F;
+    --main-transition: all 0.4s ease-in-out;
+    --main-padding: 20px;
+    --main-md-padding: 18px;
+    --red: #FF014F;
+}
+
+.nav-link {
+    @apply text-[#FF014F] hover:text-[#FF014F] font-bold transition-colors duration-300 relative;
+}
+
+.nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-[#FF014F] transition-all duration-300;
+}
+
+.nav-link:hover::after {
+    @apply w-full;
+}
+
+
+
+.card {
+    --start: 0;
+    position: relative;
+    /* width: 280px;
+    height: 350px;
+    margin: 10px;
+    padding: 40px;
+    background: #040404;
+    /* border-radius: 14px; */
+    overflow: hidden;
+}
+
+/* Main border effect (pure red) */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 22px;
+    border: 2px solid transparent;
+    background: var(--red);
+    mask:
+        linear-gradient(#0000, #0000),
+        conic-gradient(from calc((var(--start) - 20) * 1deg),
+            #fff 0deg,
+            #fff 100deg,
+            transparent 120deg);
+    mask-composite: intersect;
+    mask-clip: padding-box, border-box;
+    opacity: 0;
+    transition: 0.35s ease;
+}
+
+/* Outer blurred glow (pure red) */
+.glow::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 14px;
+    /* background: var(--red); */
+    filter: blur(20px);
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card:hover .glow::before {
+    opacity: 0.7;
+}
