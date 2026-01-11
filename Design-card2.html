@@ -9,14 +9,60 @@
     <link rel="shortcut icon" href="ML logo.png" type="image/x-icon">
     <!-- Tailwind -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
+    <!-- css varibales -->
+    <link rel="stylesheet" href="Css-Variables.css">
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
-<body>
+<body class="bg-black">
+    <!-- Header -->
+    <section class="sticky top-0 z-40" id="header">
+        <header class="absolute inset-x-0 top-0 z-50 bg-[#191210]">
+            <nav aria-label="Global" class="flex items-center justify-between p-6 lg:px-8" id="navbar">
+                <div class="flex lg:flex-1">
+                    <a href="#" class="ml-10 p-1.5">
+                        <h1 class="text-2xl text-[var(--main-text-color)] font-bold">LUQMAN NASIR</h1>
+                    </a>
+                </div>
+                <div class="flex lg:hidden">
+                    <button type="button" command="show-modal" commandfor="mobile-menu"
+                        class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-200">
+                        <span class="sr-only">Open main menu</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" data-slot="icon"
+                            aria-hidden="true" class="size-6">
+                            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Contact Icons -->
+                <div class="hidden text-white lg:flex lg:flex-1 lg:justify-end lg:gap-x-3">
+                    <div
+                        class="relative w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-1 ">
+                        <a href="https://www.instagram.com/mluqman._22/"><i class="fa-brands fa-instagram"></i></a>
+                    </div>
+                    <div
+                        class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                        <a href="https://www.linkedin.com/in/muhammad-luqman-nasir-web-developer/"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                    <div
+                        class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                        <a href="https://wa.me/923297342850"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                    <div
+                        class="w-[40px] h-[40px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[30] after:-z-10">
+                        <a href="https://www.facebook.com/profile.php?id=61550311270669"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+    </section>
     <div
         class="service-card group flex flex-col justify-center items-center gap-10 bg-[#FF014F] text-white justify-center p-8 border-t border-[#9F9F9F] transition-all duration-[.5s]">
         <div class="w-[70px] h-[70px] rounded-full border flex justify-center items-center">
@@ -55,11 +101,143 @@
             experiences built using HTML, CSS, JS, and Tailwind CSS.
             </p>
         </div>
-        <a href="LUQMAN-PORTFOLIO.html"> <button
+        <a href="index.html"> <button
                 class="font-bold cursor-pointer px-10 py-5 border rounded-full transition-all duration-[.5s] hover:bg-white hover:text-[#FF014F]">RETURN
             </button></a>
     </div>
 
+    <!-- Footer -->
+    <section id="Contact">
+        <footer>
+            <div class="text-white grid grid-cols-1 gap-10 p-8 sm:px-18 md:grid-cols-2 lg:grid-cols-3 lg:px-20">
+                <div class="flex flex-col gap-5" data-aos="zoom-in-up">
+                    <div class="">
+                        <a href="#" class="">
+                            <h1 class="text-2xl text-[var(--main-text-color)] font-bold">LUQMAN NASIR</h1>
+                        </a>
+                    </div>
+                    <div>
+                        <h1 class="text-5xl text-shadow-lg/30 text-shadow-[#FF014F]"><span class="font-bold">Get
+                                Ready</span>To Create Great</h1>
+                    </div>
+                </div>
+                <div class="flex flex-col gap-10" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <h3 class="font-bold text-xl">Quick Links</h3>
+                    <ul class="flex flex-col gap-3 text-xl">
+                        <li data-aos="fade-up" data-aos-anchor-placement="top-bottom" class="cursor-pointer">
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Home</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">About</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Services</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Blog</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Projects</a>
+                        </li>
+                        <li class="cursor-pointer" data-aos="fade-up" data-aos-anchor-placement="top-bottom"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="flex flex-col gap-10" data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                    <h3 class="font-bold text-xl">Contact</h3>
+                    <ul class="flex flex-col gap-3 text-xl">
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href=""><i class="fa-regular fa-message"></i></a>
+                            </div>
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">56star3035@gmail.com
+                            </a>
+                        </li>
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href=""><i class="fa-solid fa-location-dot"></i></a>
+                            </div>
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Teh:Yazman
+                                Disc:Bahawalpur</a>
+                        </li>
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href="https://wa.me/923297342850"><i class="fa-solid fa-phone"></i></a>
+                            </div>
+                            <a href="https://wa.me/923297342850"
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">+92329-7342850</a>
+                        </li>
+                        <li class="cursor-pointer flex items-center gap-3" data-aos="fade-up"
+                            data-aos-anchor-placement="top-bottom">
+                            <div
+                                class="w-[40px] h-[40px] rounded-full border border-[#262626] flex justify-center items-center">
+                                <a href="https://wa.me/923297342850"><i class="fa-solid fa-phone"></i></a>
+                            </div>
+                            <a href="https://wa.me/923194857135"
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">+92319-4857135</a>
+                        </li>
+                        <li>
+                            <div class="text-white flex items-center gap-x-3" data-aos="fade-up">
+                                <div
+                                    class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[35] after:-z-10">
+                                    <a href="https://www.instagram.com/mluqman._22/"><i
+                                            class="fa-brands fa-instagram"></i></a>
+                                </div>
+                                <div class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[35] after:-z-10"
+                                    data-aos="zoom-out">
+                                    <a href="https://www.linkedin.com/in/muhammad-luqman-nasir-web-developer/"><i
+                                            class="fa-brands fa-linkedin-in"></i></a>
+                                </div>
+                                <div class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[35] after:-z-10"
+                                    data-aos="zoom-out">
+                                    <a href="https://wa.me/923297342850"><i class="fa-brands fa-whatsapp"></i></a>
+                                </div>
+                                <div class="w-[50px] h-[50px] rounded-full flex justify-center items-center bg-[#ffffff10] after:content[''] after:absolute hover:after:border after:border-[var(--main-text-color)] after:rounded-full cursor-pointer after:transition-all after:duration-[.5s] after:ease-in-out hover:after:scale-[35] after:-z-10"
+                                    data-aos="zoom-out">
+                                    <a href="https://www.facebook.com/profile.php?id=61550311270669"><i
+                                            class="fa-brands fa-facebook-f"></i></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-white flex flex-col justify-center items-center gap-5 m-8 p-8 border-t border-[#262626] sm:mx-18 md:flex-row md:justify-between lg:mx-20"
+                data-aos="fade-up" data-aos-anchor-placement="top-bottom">
+                <div class="text-[#9F9F9F]">
+                    <p>&copy; <span class="text-white font-semibold">Luqman Nasir</span> 2025 | All Right Reserved</p>
+                </div>
+                <div>
+                    <ul class="flex gap-3">
+                        <li>
+                            <a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Terms
+                                & Conditions</a>
+                        </li>
+                        <li class="cursor-pointer"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Privacy
+                                Policy</a>
+                        </li>
+                        <li class="cursor-pointer"><a href=""
+                                class="relative after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-full after:h-[2px] after:bg-[#FF014F] after:scale-x-0 after:origin-left after:transition-transform after:duration-300 hover:after:scale-x-100 hover:cursor-pointer hover:text-[#FF014F] hover:scale-110 transition-all duration-[.5s]">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 
 </html>

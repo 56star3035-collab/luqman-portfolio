@@ -1,30 +1,3 @@
-// let border = document.getElementById('card1')
-
-// function border2() {
-//     let borderShow = border.style.border = 'red solid 1px'
-// }
-
-
-
-// const borderShow = document.getElementById('border-show')
-
-// function border() {
-//     borderShow.style.borderBottom = "2px solid red";
-// }
-// function borderNone() {
-//     borderShow.style.borderBottom = "none";
-
-// }
-
-// let colors = document.getElementsByClassName('color');
-
-// function giveColor() {
-
-//     for (let item of colors) {
-//         item.style.color = "white";
-//     }
-// }
-
 
 // 
 const cards = document.querySelectorAll('.service-card');
@@ -153,19 +126,6 @@ window.addEventListener('scroll', () => {
     });
 });
 
-// get in touch
-// let getInTouch = document.getElementById("get-in-touch");
-
-// function getMe() {
-//     let div = document.createElement('div');
-//     div.style.width = '400px';
-//     div.style.height = '600px';
-//     div.style.border = '#FF014F';
-//     div.style.borderRadius = '20px';
-//     div.style.backgroundColor = 'white';
-//     div.textContent = "i am appendChild";
-// }
-
 // Back to top
 const backToTop = document.getElementById("backToTop");
 const homeSection = document.getElementById("Home");
@@ -190,53 +150,3 @@ backToTop.addEventListener("click", () => {
 });
 
 
-// const counters = document.querySelectorAll('.counter');
-
-// counters.forEach(counter => {
-//     const updateCounter = () => {
-//         const target = +counter.getAttribute('data-target');
-//         const current = +counter.innerText.replace(/\D/g, '');
-//         const increment = target / 50; // speed
-
-//         if (current < target) {
-//             counter.innerText = Math.ceil(current + increment).toString().padStart(2, '0');
-//             setTimeout(updateCounter, 30);
-//         } else {
-//             counter.innerText = target.toString().padStart(2, '0');
-//         }
-//     };
-
-//     updateCounter();
-// });
-// gsap.from(".counter", {
-//     textContent: 0,
-//     duration: 2,
-//     ease: "power1.out",
-//     snap: { textContent: 1 }
-// });
-
-
-gsap.registerPlugin(ScrollTrigger);
-
-const counters = document.querySelectorAll(".counter");
-
-counters.forEach(counter => {
-    let targetValue = +counter.getAttribute("data-target");
-
-    gsap.fromTo(counter,
-        { innerText: 0 },
-        {
-            innerText: targetValue,
-            duration: 2,
-            ease: "power1.out",
-            scrollTrigger: {
-                trigger: counter,
-                start: "top 80%",
-            },
-            snap: { innerText: 1 },
-            onUpdate: function () {
-                counter.innerText = Math.floor(counter.innerText);
-            }
-        }
-    );
-});
