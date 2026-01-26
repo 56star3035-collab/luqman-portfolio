@@ -150,3 +150,109 @@ backToTop.addEventListener("click", () => {
 });
 
 
+const track = document.getElementById("carouselTrack");
+const slides = track.children;
+const prevBtn = document.getElementById("prev");
+const nextBtn = document.getElementById("next");
+const dotsContainer = document.getElementById("dots");
+
+let index = 0;
+let slideWidth;
+let autoPlay;
+let startX = 0;
+let slidesPerView = 1;
+let gap = 20;
+
+function updateSlidesPerView() {
+    if (window.innerWidth >= 1024) slidesPerView = 3;
+    else if (window.innerWidth >= 768) slidesPerView = 2;
+    else slidesPerView = 1;
+}
+
+
+// Calculate slide width dynamically
+function updateSlideWidth() {
+    slideWidth = slides[0].offsetWidth + gap;
+}
+
+function maxIndex() {
+    return slides.length - slidesPerView;
+}
+
+window.addEventListener("resize", updateSlideWidth);
+updateSlideWidth();
+
+// Create dots
+function createDots() {
+    dotsContainer.innerHTML = "";
+    for (let i = 0; i <= maxIndex(); i++) {
+        const dot = document.createElement("button");
+        dot.className = `w-3 h-3 rounded-full ${i === 0 ? "bg-[#FF014F]" : "bg-white"}`;
+        dot.addEventListener("click", () => {
+            index = i;
+            moveSlide();
+            resetAutoPlay();
+        });
+        dotsContainer.appendChild(dot);
+    }
+}
+
+
+// Move slide
+function moveSlide() {
+    track.style.transform = `translateX(-${index * slideWidth}px)`;
+
+    [...dotsContainer.children].forEach((dot, i) => {
+        dot.classList.toggle("bg-[#FF014F]", i === index);
+        dot.classList.toggle("bg-white", i !== index);
+    });
+}
+
+
+// Buttons
+nextBtn.addEventListener("click", () => {
+    index = index >= maxIndex() ? 0 : index + 1;
+    moveSlide();
+    resetAutoPlay();
+});
+
+prevBtn.addEventListener("click", () => {
+    index = index <= 0 ? maxIndex() : index - 1;
+    moveSlide();
+    resetAutoPlay();
+});
+
+
+// Auto play
+function startAutoPlay() {
+    autoPlay = setInterval(() => {
+        index = index >= maxIndex() ? 0 : index + 1;
+        moveSlide();
+    }, 5000);
+}
+
+function updateLayout() {
+    updateSlidesPerView();
+    updateSlideWidth();
+    createDots();
+    moveSlide();
+}
+
+window.addEventListener("resize", updateLayout);
+updateLayout();
+startAutoPlay();
+
+track.addEventListener("touchstart", e => {
+    startX = e.touches[0].clientX;
+});
+
+track.addEventListener("touchend", e => {
+    const endX = e.changedTouches[0].clientX;
+    const diff = startX - endX;
+
+    if (diff > 50) index = (index + 1) % slides.length;
+    if (diff < -50) index = (index - 1 + slides.length) % slides.length;
+
+    moveSlide();
+    resetAutoPlay();
+});
